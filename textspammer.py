@@ -21,15 +21,19 @@ def count_down():
     print(1)
     time.sleep(1)
 
+def send():
+    keyb.press(Key.enter)
+    keyb.release(Key.enter)
+    time.sleep(0.1)
+
 def wordSpam():
     def output(word,count):
         for i in range(0,count):
             for j in word:   
                 keyb.press(j)
                 keyb.release(j)
-            time.sleep(0.2)
-            keyb.press(Key.enter)
-            keyb.release(Key.enter)
+            time.sleep(0.1)
+            send()
     
     word = input("Type word: ")
     count = int(input("How many times to spam?: "))
@@ -47,9 +51,8 @@ def textSpam():
             for j in word:
                 keyb.press(j)
                 keyb.release(j)
-            time.sleep(0.2)
-            keyb.press(Key.enter)
-            keyb.release(Key.enter)
+            time.sleep(0.1)
+            send()
 
     text = input("Introduce text: ")
     count_down()
